@@ -24,17 +24,19 @@ export async function getStaticProps() {
   }
 }
 
+
+
 const Index = ({ posts }) => {
- // console.log(posts)
   return (
-    <div >
-  {
-    posts.map(post=>(
-      <PostCard key={post.id} post={post} />
-    ))
-  }
+    <div>
+      {posts.map((post) => (
+        <PostCard key={post.sys.id} post={post} /> // Use a unique key
+      ))}
     </div>
-  )
-}
+  );
+};
+
+
+
 
 export default Index

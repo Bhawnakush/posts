@@ -9,6 +9,11 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals"), // Extend Next.js core web vitals
+];
 
-export default eslintConfig;
+// Serialize to remove circular references
+const cleanConfig = JSON.parse(JSON.stringify(eslintConfig));
+
+export default cleanConfig;
