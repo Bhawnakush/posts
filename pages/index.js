@@ -1,6 +1,6 @@
 import React from 'react'
 import { createClient } from 'contentful'
-import PostCard from '@/components/posts/PostCard'
+import PostCard from '../components/posts/PostCard'
 //import { client } from '@/lib/contentful/client'  // If you're using this client elsewhere, otherwise it's redundant here
 
 // Correcting getStaticProps to fetch data correctly
@@ -24,17 +24,19 @@ export async function getStaticProps() {
   }
 }
 
+
+
 const Index = ({ posts }) => {
- // console.log(posts)
   return (
-    <div >
-  {
-    posts.map(post=>(
-      <PostCard key={post.id} post={post} />
-    ))
-  }
+    <div>
+      {posts.map((post) => (
+        <PostCard key={post.sys.id} post={post} /> // Use a unique key
+      ))}
     </div>
-  )
-}
+  );
+};
+
+
+
 
 export default Index
