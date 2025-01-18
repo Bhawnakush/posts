@@ -17,12 +17,12 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts: res.items,  // Pass the fetched posts to the component
+      posts: res.items},  // Pass the fetched posts to the component
     
     revalidate:1
     }
   }
-}
+
 
 
 
