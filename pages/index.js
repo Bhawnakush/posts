@@ -1,6 +1,6 @@
 import React from 'react'
 import { createClient } from 'contentful'
-import PostCard from '@/components/posts/PostCard'
+import PostCard from '../components/posts/PostCard'
 //import { client } from '@/lib/contentful/client'  // If you're using this client elsewhere, otherwise it's redundant here
 
 // Correcting getStaticProps to fetch data correctly
